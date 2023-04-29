@@ -1,0 +1,4 @@
+[submodule "assets/beard"]
+	path = assets/beard
+	url = https://github.com/pedrosbmartins/beard
+	branch = main
