@@ -10,3 +10,14 @@ blockquote {
     letter-spacing: -1px;
     font-style: italic;
 }
+
+.link-button {
+    color: #f2a66c;
+    &:hover {
+        color: #d58559;
+    }
+}
+
+h2 {
+    margin-top: 25px;
+}
