@@ -14,7 +14,7 @@ With this simple thought experiment, I had an incredible insight into the sheer 
 
 As it turns out, in a scaled universe where the Sun is a mere 1 cm in diameter, our closest star neighbor -- [Proxima Centauri](https://en.wikipedia.org/wiki/Proxima_Centauri) -- would be **approximately 288 km away**. "Hell", I thought, "if this tiny Sun was located in my living room in Rio de Janeiro, Proxima Centauri would be almost as far as São Paulo!".
 
-I certainly cannot wrap my head around the distance of 4.2 light-years, or 40 trillion km, but I do have an inherent feeling for the Rio-São Paulo distance. I was born and raised in Rio. I have seen both Rio and São Paulo represented on a map countless times, from geography classes at school, to weatherman reports on TV and the routine usage of Google Maps. I have personally visited São Paulo quite a few times since a young age, treading the distance by car, bus, and plane.
+Certainly I cannot wrap my head around the distance of 4.2 light-years, or 40 trillion km, but I do have an inherent feeling for the Rio-São Paulo distance. I was born and raised in Rio. I have seen both Rio and São Paulo represented on a map countless times, from geography classes at school, to weatherman reports on TV and the routine usage of Google Maps. I have personally visited São Paulo quite a few times since a young age, treading the distance by car, bus, and plane.
 
 And there it was, in the context of such mundane path, the sheer enormity of our universe. For a brief moment, I could visualize a tiny 1 cm Sun floating in front of me in the darkness, and far away -- so far away -- Proxima Centauri, our closest neighbor. All in a somewhat comprehensible scale of distance. 
 
