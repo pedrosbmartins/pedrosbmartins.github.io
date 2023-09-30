@@ -10,7 +10,7 @@ title: "Decision Diagrams: Overcoming Replication And Fragmentation in Decision 
 
 _The good old decision tree{{link?}}._
 
-This classical machine learning model is still quite relevant in both academia and industry, even while large language models{{link?}} and stable diffusion{{link?}} take the world by storm. Decision trees are reasonably simple to implement and debug, and tree-based models like Random Forest{{link}} and XGBoost{{link}} are known for their ease of use and good performance, especially when working with tabular data.[^tabular-data]
+This classical machine learning model is still relevant in both academia and industry, even while large language models{{link?}} and stable diffusion{{link?}} take the world by storm. Decision trees are reasonably simple to implement and debug, and tree-based models like Random Forest{{link}} and XGBoost{{link}} are known for their ease of use and good performance, especially when working with tabular data.[^tabular-data]
 
 Decision trees are also considered highly interpretable[^interpretability] since the model's internal decisions can be inspected in the learned tree itself. This is a valuable feature for models applied in high-stakes decision-making and other settings where transparency is a concern.
 
@@ -34,7 +34,7 @@ _Tip: by clicking on <span class="link-button">links with this color</span> the 
 <iframe id="decision-tree-visualization" src="/assets/beard/dist/index.html" width="100%" height="500px"></iframe>
 <p style="text-align: center;font-size: 0.75rem;">Tree visualization using <a href="https://github.com/pedrosbmartins/beard" target="_blank">beard</a>.</p>
 
-Notice that the subtree that expresses the second term -- `C·D` -- had to be duplicated in order to represent the classification rule. In fact, for this expression and variable ordering, there will be one replicated subtree for each variable in the first term (you can verify this by <a href="#" class="link-button" onclick="return render(decisionTree, { expression: '(A·B·E)+(C·D)' });">adding new variables to the first term</a>). This is an example of a phenomenon known as the **replication problem** of decision trees. For a tree to properly express certain concepts, it must replicate part of its structure to account for all feature-splitting tests.[^replication-problem]
+Notice that the subtree that expresses the second term -- `C·D` -- had to be duplicated in order to represent the classification rule. In fact, for this expression and variable ordering, there will be one replicated subtree for each variable in the first term (you can verify this by <a href="#" class="link-button" onclick="return incrementVariable();">adding new variables to the first term</a>). This is an example of a phenomenon known as the **replication problem** of decision trees. For a tree to properly express certain concepts, it must replicate part of its structure to account for all feature-splitting tests.[^replication-problem]
 
 The replication problem leads to **data fragmentation**. As different subtrees expressing the same concept must be replicated across the tree structure, the statistical support given by training samples for each split decision has to decrease with depth necessarily, for a given finite data set. In other words, more data is needed to fully learn the underlying concept.
 
@@ -89,6 +89,20 @@ A recent trend in the literature has been the proposal of _optimal methods_ for 
         return false
     }
 
+    let increment = 0
+    const charE = 'E'.charCodeAt(0)
+    function incrementVariable() {
+        if (!decisionTree || increment >= 5) return false
+        increment += 1
+        const expression = `(A·B·${additionalTermList().join('·')})+(C·D)`
+        decisionTree.render({ expression })
+        return false
+    }
+
+    function additionalTermList() {
+        return [...new Array(increment)].map((_,i) => String.fromCharCode(charE+i))
+    }
+
     const decisionTreeIframe = document.getElementById('decision-tree-visualization')
     let decisionTree
 
@@ -97,15 +111,13 @@ A recent trend in the literature has been the proposal of _optimal methods_ for 
 
     window.addEventListener('message', event => {
         if (event.data.name !== 'graphvizloaded') return
-        switch (event.data.frameId) {
-            case decisionTreeIframe.id:
-                decisionTree = decisionTreeIframe.contentWindow.beard
-                render(decisionTree, { expression: '{{exampleExpression}}', variant: 'tree', options: { hideVariantSelector: true } })
-                break
-            case decisionDiagramIframe.id:
-                decisionDiagram = decisionDiagramIframe.contentWindow.beard
-                render(decisionDiagram, { expression: '{{exampleExpression}}', variant: 'diagram', options: { hideVariantSelector: false } })
-                break
+        if (event.data.frameId === decisionTreeIframe.id) {
+            decisionTree = decisionTreeIframe.contentWindow.beard
+            render(decisionTree, { expression: '{{exampleExpression}}', variant: 'tree', options: { hideVariantSelector: true } })
         }
-      })
+        if (event.data.frameId === decisionDiagramIframe.id) {
+            decisionDiagram = decisionDiagramIframe.contentWindow.beard
+            render(decisionDiagram, { expression: '{{exampleExpression}}', variant: 'diagram', options: { hideVariantSelector: false } })
+        }
+    })
 </script>
