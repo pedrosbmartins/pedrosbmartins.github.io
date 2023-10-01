@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Decision Diagrams: Overcoming Replication And Fragmentation in Decision Trees"
-# title:  "Decision Diagrams: Generalizing Decision Trees to DAGs"
 ---
 
 {% assign exampleExpression = "(A·B)+(C·D)" %}
@@ -19,9 +18,6 @@ The major shortcomings of decision trees include their high variance and tendenc
 So what else can be improved in the classical decision tree model?
 
 ## Replication and fragmentation
-
-<!-- Introduce replication (interactive examples, simple & large) -->
-<!-- Leads to fragmentation -->
 
 Consider a decision tree for a binary classification problem using binary variables. The logic that follows can easily be extended for continuous variables, multiclass classification, and regression, but for the sake of simplicity, we will stick with this setting.
 
@@ -44,9 +40,6 @@ In truth, the root of the replication problem lies in the tree structure itself.
 
 ## Decision diagrams
 
-<!-- Decision diagrams -->
-<!-- From ROBDDs to ML classification model -->
-
 The defining property of directed rooted trees is that there is _exactly_ one path from the root node to any single leaf (you may use the [visualization above](#decision-tree-visualization) to convince yourself of this fact by trying different expressions). Take away this property, and you have now a general rooted _directed acyclic graph_ (DAG). That is, for a rooted DAG, there may be multiple paths from the root to a leaf.
 
 Now, instead of replicating subtrees to express a concept such as `{{exampleExpression}}`, we can have a single subgraph representing the previously replicated concept, and connect different nodes of the graph to the root of this subgraph. Just like it's <a href="#decision-diagram-visualization" class="link-button" onclick="render(decisionDiagram, { expression: '{{exampleExpression}}', variant: 'diagram' });">demonstrated below</a> with the same expression of our running example. You can of course interpret it again as <a href="#" class="link-button" onclick="return render(decisionDiagram, { expression: '{{carEvaluationExpression}}' });">a car evaluation</a>, <a href="#" class="link-button" onclick="return render(decisionDiagram, { expression: '{{heartRiskClassifExpression}}' });">a heart attack risk classification</a>, or something else.
@@ -58,39 +51,43 @@ In fact, ROBDDs have been extensively applied as an efficient data structure and
 <iframe id="decision-diagram-visualization" src="/assets/beard/dist/index.html" width="100%" height="500px"></iframe>
 <p style="text-align: center;font-size: 0.75rem;">Decision diagram visualization using <a href="https://github.com/pedrosbmartins/beard" target="_blank">beard</a>.</p>
 
-<!-- - more examples CDF, 3-input XOR, parity?, multiplexor?, ... -->
-
 Our running example is a binary expression in _disjunctive normal form_ (DNF), but there are other formulas that illustrate the compactness of decision diagrams when compared to decision trees. For instance, we could visualize <a href="#" class="link-button" onclick="return render(decisionDiagram, { expression: '(A+B)·(C+D)' });">a similar expression in _conjunctive normal form_ (CNF)</a>, the <a href="#" class="link-button" onclick="return render(decisionDiagram, { expression: 'A·B + A·C + B·C' });">3-input</a> and <a href="#" class="link-button" onclick="return render(decisionDiagram, { expression: 'A·B·C+A·B·D+A·C·D+B·C·D+A·B·E+A·D·E+A·C·E+B·C·E+C·D·E+B·D·E' });">5-input majority function</a>, or the <a href="#" class="link-button" onclick="return render(decisionDiagram, { expression: 'A XOR B XOR C' });">3-input</a> and <a href="#" class="link-button" onclick="return render(decisionDiagram, { expression: 'A XOR B XOR C XOR D' });">4-input XOR function</a>.
 
 ### Diagrams as classifiers
 
-Decision diagrams have not been widely adopted as a classification model, but several constructive approaches have been proposed. The inherent difficulty in learning diagrams arises from having to decide both splits and merges, and also from determining the best diagram topology. Therefore, most early algorithm proposals consisted of building a decision tree and then finding merges in a post-processing step, being computationally expensive for large problems, or of fixing the diagram structure a priori, which can be a considerable disadvantage.
+Decision diagrams have not been widely adopted as a classification model, but several constructive approaches have been proposed. The inherent difficulty in learning diagrams arises from having to decide both traditional splits (as in trees) and node merges (i.e. linking two nodes to a single child node, to form a DAG), and also from determining the best diagram topology. Therefore, most early algorithm proposals consisted of building a decision tree and then finding merges in a post-processing step, being computationally expensive for large problems, or of fixing the diagram structure a priori, which can be a considerable disadvantage.
 
-Some proposals used the Minimum Message Length Principle (MMLP) to build diagrams, while others [se aproveitam de] _reduced ordered_ decision diagrams, which are diagrams that have no redundant nodes and where the tests performed on the variables follow a fixed order for all paths in the graph. This allows the use of efficient algorithms known from logical synthesis for manipulating this kind of graph.
+Some proposals were advanced over the years to overcome these problems, but decision diagrams haven't received much attention yet. The fact is that the overhead of training DAGs haven't caught up yet with the simplicity of decision trees. [...]
 
-In a method called _decision jungles_, ensembles of decision diagrams are proposed, where split and merging decisions are optimized jointly by minimizing the weighted entropy sum at the leaves, and the algorithm is implemented using local search heuristics. The authors reported improved generalization compared to random forests while using substantially less memory.
+#### Optimal decision diagrams
 
-### Optimal decision diagrams
+A recent trend in the literature has been the proposal of _optimal methods_ for the construction of decision diagrams for classification. This comes in step with the rise of optimal methods for decision trees, pushed by advances in hardware and in combinatorial optimization software. The work of Bertsimas and Dunn on optimal decision trees [^optimal-decision-trees] has been the root for continuous improvement of mathematical programming techniques for learning these models.
 
-A recent trend in the literature has been the proposal of _optimal methods_ for the construction of decision diagrams for classification. This comes in step with the rise of optimal methods for decision trees, pushed by advances in hardware and in combinatorial optimization software \cite{Bixby2012AComputation}. The work of Bertsimas and Dunn \cite{Bertsimas2017} has been the root for continuous improvement of mathematical programming techniques for learning decision trees \cite{Carrizosa2021}, and other research paths include SAT \cite{Narodytska2018LearningSAT}, dynamic programming \cite{Demirovic2020MurTree:Search}, and branch-and-bound search \cite{Aglin2020LearningSearch}. These techniques are usually limited to small and medium-sized problems, but the substantial improvements in combinatorial optimization software have yielded compelling results in data sets of practical importance.
+For decision diagrams, SAT-based model for computing a decision tree as the smallest reduced ordered binary decision diagram have been proposed [^optimal-robdds]
 
-\citeonline{Cabodi2021OptimizingClassification} present a SAT-based model for computing a decision tree as the smallest reduced ordered binary decision diagram. \citeonline{Hu2022OptimizingClassification} proposed a similar approach, with the key differences of using a MaxSAT solver and limiting the resulting diagram depth. Simultaneously, another research stream in the optimal methods space is the Optimal Decision Diagram (ODD) algorithm \cite{Florio2022OptimalClassification}, of which I am a co-author.
+Simultaneously, another research stream in the optimal methods space is the Optimal Decision Diagram (ODD) algorithm \cite{Florio2022OptimalClassification}, of which I am a co-author.
 
-- advantages? generally more sparse, maybe more interpretable
+## Conclusion
+
+generally more sparse, maybe more interpretable. But no size fits all, still it's good to have this tool for classification.
 
 [^tabular-data]: Tabular data and DL discussion.{{complete}}
 [^interpretability]: Do note that interpretability claims require some care... {{complete}}
 [^replication-problem]: [Replication problem overview](https://link.springer.com/chapter/10.1007/BFb0017003#chapter-info) {{complete}}
 [^robdd]: [ROBDD overview](https://web.archive.org/web/20110304135553/http://configit.com/fileadmin/Configit/Documents/bdd-eap.pdf) {{complete}}
+[^optimal-decision-trees]: cite{Bertsimas2017} {{complete}}
+[^optimal-robdds]: cite{Cabodi2021OptimizingClassification} and cite {Hu2022OptimizingClassification}
 
 <script type="text/javascript">
+    let increment = 0
+    const E_CHAR_CODE = 'E'.charCodeAt(0)
+
     function render(beardInstance, state) {
+        increment = 0
         beardInstance && beardInstance.render({ ...state })
         return false
     }
 
-    let increment = 0
-    const charE = 'E'.charCodeAt(0)
     function incrementVariable() {
         if (!decisionTree || increment >= 5) return false
         increment += 1
@@ -100,7 +97,7 @@ A recent trend in the literature has been the proposal of _optimal methods_ for 
     }
 
     function additionalTermList() {
-        return [...new Array(increment)].map((_,i) => String.fromCharCode(charE+i))
+        return [...new Array(increment)].map((_,i) => String.fromCharCode(E_CHAR_CODE+i))
     }
 
     const decisionTreeIframe = document.getElementById('decision-tree-visualization')
