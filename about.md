@@ -4,12 +4,8 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+Software engineer with a Master's in Computer Science, based in Rio.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[pedrosbarbosamartins@gmail.com](mailto:pedrosbarbosamartins@gmail.com)
