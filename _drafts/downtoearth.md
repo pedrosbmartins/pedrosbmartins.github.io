@@ -11,7 +11,7 @@ One day this thought popped in my head while reading about astronomy and reflect
 
 As it turns out, in a scaled universe where the Sun is a mere 1 cm in diameter, our closest star neighbor -- [Proxima Centauri](https://en.wikipedia.org/wiki/Proxima_Centauri) -- would be **approximately 288 km away**. "Hell", I thought, "if this tiny Sun was located in my living room in Rio de Janeiro, Proxima Centauri would be almost as far as São Paulo!".
 
-Certainly I cannot wrap my head around the distance of 4.2 light-years, or 40 trillion km, but I do have an inherent feeling for the Rio-São Paulo distance. I was born and raised in Rio. I have seen both Rio and São Paulo represented on a map countless times, from geography classes at school, to weatherman reports on TV and the routine usage of Google Maps. I have personally visited São Paulo quite a few times since a young age, treading the distance by car, bus, and plane.
+Certainly I cannot wrap my head around the distance of 4.2 light-years, or 40 trillion km, but I do have an inherent intuition for the Rio-São Paulo distance. I was born and raised in Rio. I have seen both Rio and São Paulo represented on a map countless times, from geography classes at school, to weatherman reports on TV and the routine usage of Google Maps. I have personally visited São Paulo quite a few times since a young age, treading the distance by car, bus, and plane.
 
 So there it was, in the context of such mundane path, the sheer enormity of our universe. For a brief moment, I could visualize a tiny 1 cm Sun floating in front of me in the darkness, and far away -- so far away -- Proxima Centauri, our closest neighbor. All in a somewhat comprehensible scale of distance.
 
@@ -27,7 +27,7 @@ That's how downtoearth turned into a software project. By creating a simple webs
 
 Why stop at customizing location, though? Other than the vast distances to the nearest star systems, there are several potential astronomical visualizations to be made. The Solar System and its planets, Earth's satellites, exoplanets, galaxies and so many other systems and scales can be visualized -- and better understood -- from a local geography viewpoint.
 
-Here are a few examples.
+Here are a few examples. You can try them out by going to the [downtoearth](https://pedrosbmartins.github.io/downtoearth/) page and selecting the appropriate visualization in the dropdown menu, while changing location by using the `Position` input or clicking anywhere on the map itself.
 
 #### The Solar System
 
@@ -53,7 +53,7 @@ That's because the JWST is actually orbiting the Sun in the so-called [L₂ Lagr
 
 As there is such a great number of visualization that could be made, astronomical or otherwise, downtoearth shouldn't have only a few fixed visualizations. That's why it was actually developed around a purpose-built JSON schema.
 
-A custom visualization can be loaded by using the `From file...` option on the main dropdown. It can also be shared by using the link button next to the logo.
+A custom visualization can be loaded by using the `From file...` option on the dropdown menu. It can also be shared by using the link button next to the logo.
 
 Here is a simple example for the Earth-Moon system.
 
