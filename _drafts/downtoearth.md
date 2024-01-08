@@ -9,9 +9,9 @@ title: "downtoearth: Visualize astronomical scales by using geographical intuiti
 
 One day this thought popped in my head while reading about astronomy and reflecting on the unfathomable scale of the universe. Where, indeed, would the nearest star be? A few hundred meters away? Maybe a kilometer or two?
 
-As it turns out, in a scaled universe where the Sun is a mere 1 cm in diameter, our closest star neighbor -- [Proxima Centauri](https://en.wikipedia.org/wiki/Proxima_Centauri) -- would be **approximately 288 km away**. "Hell", I thought, "if this tiny Sun was located in my living room in Rio de Janeiro, Proxima Centauri would be almost as far as São Paulo!".
+As it turns out, in a scaled universe where the Sun is a mere 1 cm in diameter, our closest star neighbor -- [Proxima Centauri](https://en.wikipedia.org/wiki/Proxima_Centauri) -- would be **approximately 288 km away**. "Hell", I thought, "if this tiny Sun was located in my living room in Rio de Janeiro, Proxima Centauri would be almost as far as São Paulo!"
 
-Certainly I cannot wrap my head around the distance of 4.2 light-years, or 40 trillion km, but I do have an inherent intuition for the Rio-São Paulo distance. I was born and raised in Rio. I have seen both Rio and São Paulo represented on a map countless times, from geography classes at school, to weatherman reports on TV and the routine usage of Google Maps. I have personally visited São Paulo quite a few times since a young age, treading the distance by car, bus, and plane.
+Certainly I cannot wrap my head around the distance of 4.2 light-years, or 40 trillion kilometers, but I do have an intuitive understanding of the Rio-São Paulo distance. I was born and raised in Rio. I have seen both Rio and São Paulo represented on a map countless times, from geography classes at school, to weatherman reports on TV and the routine usage of Google Maps. I have personally visited São Paulo quite a few times since a young age, treading the distance by car, bus, and plane.
 
 So there it was, in the context of such mundane path, the sheer enormity of our universe. For a brief moment, I could visualize a tiny 1 cm Sun floating in front of me in the darkness, and far away -- so far away -- Proxima Centauri, our closest neighbor. All in a somewhat comprehensible scale of distance.
 
@@ -25,7 +25,7 @@ The Rio-São Paulo distance insight only works for those who _know_ this distanc
 
 That's how downtoearth turned into a software project. By creating a simple website where you could choose a custom position for the visualization, anyone could develop the same kind of intuition.
 
-Why stop at customizing location, though? Other than the vast distances to the nearest star systems, there are several potential astronomical visualizations to be made. The Solar System and its planets, Earth's satellites, exoplanets, galaxies and so many other systems and scales can be visualized -- and better understood -- from a local geography viewpoint.
+Why stop at this one visualization, though? Other than the vast distances to the nearest star systems, there are several potential astronomical visualizations to be made. The Solar System and its planets, Earth's satellites, exoplanets, galaxies and so many other systems and scales can be visualized -- and better understood -- from a local geography viewpoint.
 
 Here are a few examples. You can try them out by going to the [downtoearth](https://pedrosbmartins.github.io/downtoearth/) page and selecting the appropriate visualization in the dropdown menu, while changing location by using the `Position` input or clicking anywhere on the map itself.
 
@@ -35,7 +35,7 @@ Here are a few examples. You can try them out by going to the [downtoearth](http
 
 > If the Sun was 1 km in diameter and positioned in central Amsterdam...
 
-...Earth's orbit would still basically be inside the Netherlands, while Mars would reach Belgium and Germany, Saturn would reach as far down as northern Italy, Uranus would reach Algeria and Greece, and Neptune would reach all the way to Libya and Egypt.
+...Earth's orbit would still be essentially inside the Netherlands, while Mars would reach Belgium and Germany, Saturn would reach as far down as northern Italy, Uranus would reach Algeria, Tunisia and Greece, and Neptune would reach all the way to Libya and Egypt.
 
 In this visualization, it's easy to see that the spacing between planets seem to follow some kind of power-law -- each planet seems to be roughly twice as far from the Sun as the previous one (something often referred to as [Titius–Bode law](https://en.wikipedia.org/wiki/Titius%E2%80%93Bode_law)), at least until Neptune. In this way, each planet's orbit seem to reach increasingly distant regions of the map.
 
