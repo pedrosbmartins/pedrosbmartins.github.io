@@ -4,8 +4,24 @@ title: About
 permalink: /about/
 ---
 
-Software engineer with a Master's in Computer Science, based in Rio.
+Hey! 👋
 
-### Contact me
+I'm Pedro Martins, a software engineer based in Rio de Janeiro, Brazil.
+
+I have over 6 years of professional experience in full-stack web and mobile development, software architecture, engineering best practices, and cloud infrastructure. I enjoy working on impactful projects and have been doing so at [Grana Capital](https://grana.capital/), a Brazilian fintech startup, for five years as a partner and founding engineer.
+
+I also have a Master's degree in Computer Science with a focus on Data Science and Machine Learning.
+
+Here's my [LinkedIn account](https://www.linkedin.com/in/pedro-martins-9729b71a3/) for more in-depth professional details.
+
+When I'm not working on a software project, I'm usually reading a good book or looking at the stars through a 200mm Dobsonian telescope.
+
+### Projects
+
+- **[downtoearth](https://github.com/pedrosbmartins/downtoearth)** -- a web tool for visualizing astronomical scales and more by using local geographical intuition.
+- **[CelestialCalc.jl](https://github.com/pedrosbmartins/CelestialCalc.jl)** -- a Julia package for computational positional astronomy, built for self-educational purposes.
+- **[beard](https://github.com/pedrosbmartins/beard)** -- a simple parser and visualizer for boolean expressions.
+
+### Contact
 
 [pedrosbarbosamartins@gmail.com](mailto:pedrosbarbosamartins@gmail.com)
