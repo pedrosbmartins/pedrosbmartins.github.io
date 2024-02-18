@@ -18,7 +18,8 @@ When I'm not working on a software project, I'm usually reading a good book or l
 
 ### Projects
 
-- **[downtoearth](https://github.com/pedrosbmartins/downtoearth)** -- a web tool for visualizing astronomical scales and more by using local geographical intuition.
+- **[The History Chronicle](https://pedrosbmartins.github.io/history-chronicle)** -- a newspaper-like site for historical events that happened on this day, powered by Wikipedia API (for the events) and Generative AI (for the headlines).
+- **[downtoearth](https://pedrosbmartins.github.io/downtoearth)** -- a web tool for visualizing astronomical scales and more by using local geographical intuition.
 - **[CelestialCalc.jl](https://github.com/pedrosbmartins/CelestialCalc.jl)** -- a Julia package for computational positional astronomy, built for self-educational purposes.
 - **[beard](https://github.com/pedrosbmartins/beard)** -- a simple parser and visualizer for boolean expressions.
 
