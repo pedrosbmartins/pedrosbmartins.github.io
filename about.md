@@ -6,15 +6,17 @@ permalink: /about/
 
 Hey! 👋
 
-I'm Pedro Martins, a software engineer based in Rio de Janeiro, Brazil.
+I'm Pedro Martins, a software engineer based in Amsterdam.
 
-I have over 6 years of professional experience in full-stack web and mobile development, software architecture, engineering best practices, and cloud infrastructure. I enjoy working on impactful projects and have been doing so at [Grana Capital](https://grana.capital/), a Brazilian fintech startup, for five years as a partner and founding engineer.
+I have over 7 years of professional experience in full-stack web and mobile development, software architecture, engineering best practices, and cloud infrastructure. I enjoy working on impactful projects and have been doing so at [Recharge](https://company.recharge.com/), a global platform for digital prepaid payments.
+
+Before that, I was a partner and founding software engineer at [Grana Capital](https://grana.capital/), a Brazilian fintech startup.
 
 I also have a Master's degree in Computer Science with a focus on Data Science and Machine Learning.
 
 Here's my [LinkedIn account](https://www.linkedin.com/in/pedro-martins-9729b71a3/) for more in-depth professional details.
 
-When I'm not working on a software project, I'm usually reading a good book or looking at the stars through a 200mm Dobsonian telescope.
+When I'm not working on a software project, I'm usually reading a history book or looking at the stars through a 200mm Dobsonian telescope.
 
 ### Projects
 
